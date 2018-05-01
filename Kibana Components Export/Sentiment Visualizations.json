@@ -1,0 +1,72 @@
+[
+  {
+    "_id": "0323f030-4a0c-11e8-a0fb-abd4fa7fee02",
+    "_type": "visualization",
+    "_source": {
+      "title": "Sentiment hashtag table",
+      "visState": "{\"title\":\"Sentiment hashtag table\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false,\"showTotal\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"sentiment.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":11,\"order\":\"desc\",\"orderBy\":\"_term\",\"row\":false}},{\"id\":\"3\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"hashtags.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"3\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"4cbc2de0-49fb-11e8-a0fb-abd4fa7fee02\",\"filter\":[{\"meta\":{\"index\":\"4cbc2de0-49fb-11e8-a0fb-abd4fa7fee02\",\"negate\":true,\"disabled\":false,\"alias\":\"Not None\",\"type\":\"phrase\",\"key\":\"hashtags.keyword\",\"value\":\"None\",\"params\":{\"query\":\"None\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"hashtags.keyword\":{\"query\":\"None\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "6e362ce0-4a0b-11e8-a0fb-abd4fa7fee02",
+    "_type": "visualization",
+    "_source": {
+      "title": "Sentiment Heat Map",
+      "visState": "{\"title\":\"Sentiment Heat Map\",\"type\":\"heatmap\",\"params\":{\"type\":\"heatmap\",\"addTooltip\":true,\"addLegend\":true,\"enableHover\":false,\"legendPosition\":\"right\",\"times\":[],\"colorsNumber\":4,\"colorSchema\":\"Greens\",\"setColorRange\":false,\"colorsRange\":[],\"invertColors\":false,\"percentageMode\":false,\"valueAxes\":[{\"show\":false,\"id\":\"ValueAxis-1\",\"type\":\"value\",\"scale\":{\"type\":\"linear\",\"defaultYExtents\":false},\"labels\":{\"show\":false,\"rotate\":0,\"color\":\"#555\"}}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"hashtags.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 75\":\"rgb(247,252,245)\",\"75 - 150\":\"rgb(199,233,192)\",\"150 - 225\":\"rgb(116,196,118)\",\"225 - 300\":\"rgb(35,139,69)\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"4cbc2de0-49fb-11e8-a0fb-abd4fa7fee02\",\"filter\":[{\"meta\":{\"index\":\"4cbc2de0-49fb-11e8-a0fb-abd4fa7fee02\",\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"hashtags.keyword\",\"value\":\"None\",\"params\":{\"query\":\"None\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"hashtags.keyword\":{\"query\":\"None\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "c02401f0-4a04-11e8-a0fb-abd4fa7fee02",
+    "_type": "visualization",
+    "_source": {
+      "title": "Sentiment Line Graph",
+      "visState": "{\"title\":\"Sentiment Line Graph\",\"type\":\"line\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":500},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"category\"}],\"grid\":{\"categoryLines\":true,\"style\":{\"color\":\"#eee\"}},\"legendPosition\":\"right\",\"radiusRatio\":43,\"seriesParams\":[{\"data\":{\"id\":\"7\",\"label\":\"Count\"},\"drawLinesBetweenPoints\":true,\"interpolate\":\"linear\",\"mode\":\"normal\",\"show\":true,\"showCircles\":true,\"type\":\"line\",\"valueAxis\":\"ValueAxis-6\"}],\"times\":[],\"type\":\"line\",\"valueAxes\":[{\"id\":\"ValueAxis-6\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"defaultYExtents\":true,\"mode\":\"silhouette\",\"setYExtents\":false,\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Count\"},\"type\":\"value\"}]},\"aggs\":[{\"id\":\"7\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"8\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"sentiment.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"_term\"}},{\"id\":\"9\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"DateTimeStamp\",\"interval\":\"m\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"10\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"sentiment.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"_term\",\"row\":true}}]}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"4cbc2de0-49fb-11e8-a0fb-abd4fa7fee02\",\"filter\":[{\"meta\":{\"index\":\"4cbc2de0-49fb-11e8-a0fb-abd4fa7fee02\",\"negate\":true,\"disabled\":false,\"alias\":\"Not None\",\"type\":\"phrase\",\"key\":\"hashtags.keyword\",\"value\":\"None\",\"params\":{\"query\":\"None\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"hashtags.keyword\":{\"query\":\"None\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"globalState\"}}],\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+      }
+    }
+  },
+  {
+    "_id": "2664e3a0-4a08-11e8-a0fb-abd4fa7fee02",
+    "_type": "visualization",
+    "_source": {
+      "title": "Sentiment Pie Chart",
+      "visState": "{\"title\":\"Sentiment Pie Chart\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":1000}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"sentiment.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":4,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"hashtags.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Not Applicable\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"4cbc2de0-49fb-11e8-a0fb-abd4fa7fee02\",\"filter\":[{\"meta\":{\"index\":\"4cbc2de0-49fb-11e8-a0fb-abd4fa7fee02\",\"negate\":true,\"disabled\":false,\"alias\":\"Not None\",\"type\":\"phrase\",\"key\":\"hashtags.keyword\",\"value\":\"None\",\"params\":{\"query\":\"None\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"hashtags.keyword\":{\"query\":\"None\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"globalState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "83bb51e0-4a0a-11e8-a0fb-abd4fa7fee02",
+    "_type": "visualization",
+    "_source": {
+      "title": "Sentiment Top 10",
+      "visState": "{\"title\":\"Sentiment Top 10\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"sentiment.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":3,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":false}},{\"id\":\"3\",\"enabled\":true,\"type\":\"top_hits\",\"schema\":\"metric\",\"params\":{\"field\":\"message.keyword\",\"aggregate\":\"concat\",\"size\":10,\"sortField\":\"date\",\"sortOrder\":\"desc\",\"customLabel\":\"Top 10 message.keywords\"}},{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"4cbc2de0-49fb-11e8-a0fb-abd4fa7fee02\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  }
+]

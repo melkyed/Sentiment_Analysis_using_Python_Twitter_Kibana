@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "5c8991b0-4a0d-11e8-a0fb-abd4fa7fee02",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Sentiment Dashboard",
+      "hits": 0,
+      "description": "This Dashboard is a sentiment enabled dashboard.",
+      "panelsJSON": "[{\"panelIndex\":\"2\",\"gridData\":{\"x\":7,\"y\":0,\"w\":5,\"h\":3,\"i\":\"2\"},\"id\":\"2664e3a0-4a08-11e8-a0fb-abd4fa7fee02\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":7,\"y\":3,\"w\":5,\"h\":2,\"i\":\"3\"},\"id\":\"c02401f0-4a04-11e8-a0fb-abd4fa7fee02\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"panelIndex\":\"4\",\"gridData\":{\"x\":0,\"y\":0,\"w\":7,\"h\":5,\"i\":\"4\"},\"id\":\"0323f030-4a0c-11e8-a0fb-abd4fa7fee02\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"panelIndex\":\"5\",\"gridData\":{\"x\":0,\"y\":5,\"w\":12,\"h\":7,\"i\":\"5\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"83bb51e0-4a0a-11e8-a0fb-abd4fa7fee02\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-15m",
+      "refreshInterval": {
+        "display": "5 seconds",
+        "pause": false,
+        "section": 1,
+        "value": 5000
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"meta\":{\"index\":\"4cbc2de0-49fb-11e8-a0fb-abd4fa7fee02\",\"negate\":true,\"disabled\":false,\"alias\":\"Not None\",\"type\":\"phrase\",\"key\":\"hashtags.keyword\",\"value\":\"None\",\"params\":{\"query\":\"None\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"hashtags.keyword\":{\"query\":\"None\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]
