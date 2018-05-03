@@ -1,3 +1,5 @@
+#tejas Ghalsasi tejas.ghalsasi@csu.fullerton.edu
+#Varsha Hawaldar varshahawaldar@csu.fullerton.edu
 import json
 import tweepy           # To consume Twitter's API
 from tweepy.streaming import StreamListener
@@ -8,6 +10,8 @@ from elasticsearch import Elasticsearch #pip install Elasticsearch if not intall
 from datetime import datetime
 import calendar
 import numpy as np
+from Tkinter import *
+import webbrowser
 #from django.utils.dateparse import parse_datetime
 #from http.client import IncompleteRead
 
@@ -76,25 +80,53 @@ class TweetStreamListener(StreamListener):
         print(printstat)
         print(status)
 
-if __name__ == '__main__':
-    # create instance of the tweepy tweet stream listener
-    stock_quote= raw_input('Enter a stock quote from NASDAQ (e.j: AAPL, FB, GOOGL): ').upper()
-    listener = TweetStreamListener()
-    # set twitter keys/tokens
-    auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-    auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
-    # The most exception break up the kernel in my test is ImcompleteRead. This exception handler ensures
-    # the stream to resume when breaking up by ImcompleteRead
-    while True:
-        try:
-            # create instance of the tweepy stream
-            stream = Stream(auth, listener)
-            # search twitter for keyword "facebook"
-            stream.filter(track=[stock_quote])
-        #except IncompleteRead:
-        #    continue
-        except KeyboardInterrupt:
-                # or however you want to exit this loop
-            stream.disconnect()
-            break
+def clicked():
+    
+        stock_quote =txt.get()
+        w2.configure(text=stock_quote+" is the value entered")
+        webbrowser.open('file:///home/aibot/Desktop/GIT_folder/Sentiment_Analysis_using_Python_Twitter_Kibana/index.html', new=2)
+        listener = TweetStreamListener()
+        # set twitter keys/tokens
+        auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+        auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
+        # The most exception break up the kernel in my test is ImcompleteRead. This exception handler ensures
+        # the stream to resume when breaking up by ImcompleteRead
+        while True:
+            try:
+                # create instance of the tweepy stream
+                stream = Stream(auth, listener)
+                # search twitter for keyword "facebook"
+                stream.filter(track=[stock_quote])
+            #except IncompleteRead:
+            #    continue
+            except KeyboardInterrupt:
+                    # or however you want to exit this loop
+                stream.disconnect()
+                break
 
+#main code
+
+
+#component definations and initializations 
+window = Tk()
+window.title('Sentiment Analyzer')
+window.geometry('720x480')
+
+
+w2=Label(window, text="")
+w = Label(window, text="Enter Company Name")
+btn = Button(window, text="Predict Social Sentiment", command=clicked )
+txt = Entry(window,width=15)
+btn2=Button(window, text="Quit", command=quit )
+
+
+
+#final packing of items in the applications
+
+w.pack()
+txt.pack()
+btn.pack()
+btn2.pack()
+w2.pack()
+
+window.mainloop()
